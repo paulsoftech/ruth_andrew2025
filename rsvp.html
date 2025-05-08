@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wedding - RSVP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RSVP</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Our Story</a></li>
+                    <li><a href="venue.html">Venue & Details</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="rsvp.html">RSVP</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="rsvp-form">
+            <h2>Kindly RSVP</h2>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="attendance">Will you be attending?</label>
+                <select id="attendance" name="attendance" required>
+                    <option value="">Please Select</option>
+                    <option value="yes">Yes, I will be there!</option>
+                    <option value="no">Sorry, I can't make it.</option>
+                </select>
+
+                <label for="guests">Number of Guests (including yourself):</label>
+                <select id="guests" name="guests">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+
+                <label for="dietary">Dietary Restrictions/Allergies:</label>
+                <input type="text" id="dietary" name="dietary">
+
+                <label for="need_directions">Will you need directions on the wedding day?</label>
+                <select id="need_directions" name="need_directions">
+                    <option value="no">No, I know the way.</option>
+                    <option value="yes">Yes, I might need directions.</option>
+                </select>
+
+                <div id="directions_contact" style="display: none;">
+                    <h3>Contact for Directions:</h3>
+                    <p>If you need assistance with directions on the day of the wedding, please feel free to call:</p>
+                    <ul>
+            <li>James: <a href="tel:07033250821">07033250821</a></li>
+            <li>Timothy: <a href="tel:08101786893">08101786893</a></li>
+            <li>Esther: <a href="tel:09160616579">09160616579</a></li>
+                    </ul>
+                    <p>Please only call these numbers when necessary.</p>
+                </div>
+
+                <label for="message">Message (Optional):</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+
+                <button type="submit">Submit RSVP</button>
+            </form>
+        </section>
+
+        <footer>
+<p>&copy; Ruth & Andrew 2025. Built with love by Paul Adekanye. All Rights Reserved.
+    </p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const needDirectionsSelect = document.getElementById('need_directions');
+            const directionsContactDiv = document.getElementById('directions_contact');
+
+            if (needDirectionsSelect && directionsContactDiv) {
+                needDirectionsSelect.addEventListener('change', function() {
+                    if (this.value === 'yes') {
+                        directionsContactDiv.style.display = 'block';
+                    } else {
+                        directionsContactDiv.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
